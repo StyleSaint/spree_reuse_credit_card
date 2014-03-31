@@ -47,9 +47,9 @@
             <td><%= card.last_digits %></td>
             <td><%= card.month %></td>
             <td><%= card.year %></td>
-            <td><%= radio_button_tag "existing_card", card.id, (@cards.size ==1) %></td> <%# if we only have 1 saved card, autoselect %>
+            <td><%= radio_button_tag "existing_card", card.id, (@cards.size == 1) %></td> <%# if we only have 1 saved card, autoselect %>
             <td>
-            <%= link_to (image_tag("admin/icons/delete.png") + t(:delete)),
+            <%= link_to (image_tag("icons/delete.png") + t(:delete)),
                 spree.creditcard_url(card),
                 remote: true, method: :delete,
                 confirm: 'Are you sure?' %>
