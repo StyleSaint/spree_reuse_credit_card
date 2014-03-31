@@ -17,7 +17,7 @@ module Spree
       if @order.payment?
         if params[:payment_source].present? && source_params = params.delete(:payment_source)[params[:order][:payments_attributes].first[:payment_method_id].underscore]
           if params[:existing_card]
-            creditcard = Spree::Creditcard.find(params[:existing_card])
+            creditcard = Spree::CreditCard.find(params[:existing_card])
             authorize! :manage, creditcard
             params[:order][:payments_attributes].first[:source] = creditcard
           else
