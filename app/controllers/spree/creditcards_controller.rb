@@ -1,11 +1,11 @@
 module Spree
-  class CreditcardsController < Spree::BaseController
+  class CreditCardsController < Spree::BaseController
     ssl_allowed
 
     respond_to :js
 
     def destroy
-      @creditcard = Spree::Creditcard.find(params["id"])
+      @creditcard = Spree::CreditCard.find(params["id"])
       authorize! :destroy, @creditcard
 
       # TODO: think about the necessity of deleting payment profiles here.
