@@ -86,8 +86,8 @@ $(document).on('click','input[type="radio"][name="order[payments_attributes][][p
 
 
 function restoreContinueButton() {
-  $(".form-buttons input[type=submit]").attr('disabled',false);
-  $(".form-buttons input[type=submit]").val(original_button_text);
+  $("input.x-place-order").attr('disabled',false);
+  $("input.x-place-order").val('PLACE ORDER');
 }
 
 function useExistingCardsInit() {
@@ -105,7 +105,7 @@ function useExistingCardsInit() {
 function disableContinueButton() {
   if ($("#existing_cards input[type=radio]:checked").length == 0) {
     // temporarily rename & disable the save button if no cards are selected
-    $(".form-buttons input[type=submit]").attr('disabled',true);
-    $(".form-buttons input[type=submit]").val('Please Select a Card to Use');
+    $("input.x-place-order").attr('disabled',true);
+    $("input.x-place-order").val('Please Select a Card to Use');
   }
 }
