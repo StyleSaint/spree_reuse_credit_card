@@ -8,7 +8,7 @@
 <div id='card_notice'></div>
 
 <% if @cards.present? %>
-  <div id="card_options">
+  <div id="card_options" style="display: none;">
   <%= radio_button_tag 'use_existing_card', 'yes', true %>
   <label>Use an existing card on file</label>
   <br/>
@@ -16,16 +16,16 @@
   <label>Use a new card</label>
   </div>
 
-<div id="existing_cards">
+<div id="existing_cards"  style="display: none;">
   <%= javascript_tag do -%>
 
     $(document).ready(function () {
 
-      useExistingCardsInit();
+      //useExistingCardsInit();
 
       // we are not on the 'my account' page, so let's plug in the
       // appropriate callback for when a card is deleted
-      creditCardDeleteCallback = paymentPageResetCreditCardOptions;  
+      //creditCardDeleteCallback = paymentPageResetCreditCardOptions;  
     });
   <% end %>
 
